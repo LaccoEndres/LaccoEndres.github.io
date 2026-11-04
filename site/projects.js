@@ -6,6 +6,7 @@ const projects = [
     alt: 'Open-wheel racing on Racino’s Australia circuit',
     videos: [
       {type:'file',src:'assets/video/racino-motorsport.mp4',poster:'assets/video/racino-motorsport.webp',title:'Open-wheel racing',caption:'A short gameplay excerpt from Racino Motorsport.'},
+      {type:'file',src:'assets/video/racino-showcase.mp4',poster:'assets/video/racino-showcase.webp',title:'Racino — development showcase',caption:'A broad look at the work across Racino. Earlier development footage; the scenes and features shown are not final versions.'},
       {type:'file',src:'assets/video/racino-race-intro.mp4',poster:'assets/video/racino-race-intro.webp',title:'Race introduction',caption:'The pre-race presentation, drivers, and starting grid.'}
     ],
     description: 'Automated racing, built for the spectator. A Unity platform for realistic open-wheel racing and multiple vehicle types, including stock cars.',
@@ -95,36 +96,40 @@ const projects = [
     links:[{label:'Play the WebGL demo',url:'https://games.feevale.br/loa/corridagramatical/'},{label:'University project page',url:'https://loa.feevale.br/jogos/corridagramatical/'}]
   },
   {
-    id:'mime-time',title:'Mime Time',category:'early',kicker:'LUDUM DARE 28 / 2013',label:'72-HOUR GAME JAM',image:'mime-time.webp',alt:'Mime Time game screenshot from the original Behance project',
+    id:'mime-time',title:'Mime Time',category:'early',kicker:'LUDUM DARE 28 / 2013',label:'72-HOUR GAME JAM',image:'mime-time.webp',alt:'Mime Time title screen',
+    gallery:[{src:'mime-time-2.webp',alt:'Mime Time completed level in a low-poly garden'},{src:'mime-time-3.webp',alt:'Mime Time gameplay in the garden level'}],
     description:'One theme. Seventy-two hours. A Unity game made for Ludum Dare 28 and its “You Only Get One” challenge.',
     tags:['Unity','Game jam','72 hours'],role:'Programming',
     intro:'A game made for Ludum Dare 28, built around the theme “You Only Get One.”',contributions:['Programming for the 72-hour jam project.'],
-    context:'The original project page preserves screenshots and the development context. The jam took place in 2013; the Behance archive was published in June 2014.',
-    links:[{label:'Original project & screenshots',url:'https://www.behance.net/gallery/17535293/Mime-Time-Unity3D-Game-72h-Ludum-Dare-28-Game-Jam'}]
+    context:'Built in Unity in 2013 as a 72-hour team project. My role was programming, taking the jam’s “You Only Get One” theme into a playable 3D game.',
+    links:[]
   },
   {
     id:'super-dino',title:'Super Dino Space Cookie',category:'early',kicker:'FEEVALE GAMES LAB / 2014',label:'ONE-WEEK PROJECT',image:'super-dino.webp',alt:'Super Dino Space Cookie screenshot from the university project',
+    gallery:[{src:'super-dino-3.webp',alt:'Super Dino Space Cookie gameplay with the dinosaur moving through space'},{src:'super-dino-2.webp',alt:'Super Dino Space Cookie team credits, including Lacco Endres under programming'}],
     description:'A one-button game, a dinosaur, and a one-week deadline. Built with first-semester students taking their first steps in game development.',
     tags:['Unity','One-button game','University'],role:'Programming',
-    intro:'A Feevale games-lab project created with first-semester students. The brief was to build a game that could be played using just one button.',contributions:['Programming for a one-week project, with approximately 20 hours of work recorded on the original page.'],
-    context:'The original Behance page documents the project, its controls brief, and the collaboration with students new to game creation.',
-    links:[{label:'Original project & screenshots',url:'https://www.behance.net/gallery/17559017/Super-Dino-Space-Cookie-Unity3D-Game-1-Week-1-Game'}]
+    intro:'A Feevale games-lab project created with first-semester students. The brief was to build a game that could be played using just one button.',contributions:['Programming for a one-week project, with approximately 20 hours of work.'],
+    context:'Made alongside students having their first experience of creating a game. The one-button brief and one-week schedule kept the scope focused while the team brought together programming, art, animation, and music.',
+    links:[]
   },
   {
     id:'andalhe',title:'Andalhe',category:'early',kicker:'DGEX GAME JAM / 2013',label:'48-HOUR GAME JAM',image:'andalhe.webp',alt:'Andalhe game screenshot from the DGEX game jam project',
+    gallery:[{src:'andalhe-2.webp',alt:'Andalhe character selection screen'},{src:'andalhe-3.webp',alt:'Andalhe gameplay showing a colorful 3D course'}],
     description:'A local game jam, a Latin America theme, and forty-eight hours to make something playable.',
     tags:['Unity','Game jam','48 hours'],role:'Programming',
     intro:'A game created for the local DGEX game jam, responding to the theme “Latin America.”',contributions:['Programming for a game produced in 48 hours.'],
-    context:'The Behance archive lists web, PC, and Android builds at the time of publication. Legacy download availability has not been confirmed.',
-    links:[{label:'Original project & screenshots',url:'https://www.behance.net/gallery/17557783/Andalhe-Unity3D-Game-48h-DGEX-Game-Jam'}]
+    context:'Produced in Unity for the DGEX jam in 2013, with web, PC, and Android builds. My role was programming within the team’s 48-hour production window.',
+    links:[]
   },
   {
-    id:'pataco',title:'Patáço',category:'early',kicker:'FEEVALE GAMES LAB / 2013',label:'UNIVERSITY PROJECT',image:'pataco.webp',alt:'Patáço game screenshot preserved on Behance',
-    videos:[{type:'embed',src:'https://www-ccv.adobe.io/v1/player/ccv/R-89eRN3rUr/embed?api_key=behance1&bgcolor=%23191919',title:'Patáço gameplay presentation',caption:'The original presentation video preserved on Behance.',url:'https://www.behance.net/gallery/17423669/Pataco-Unity3D-Game'}],
+    id:'pataco',title:'Patáço',category:'early',kicker:'FEEVALE GAMES LAB / 2013',label:'UNIVERSITY PROJECT',image:'pataco.webp',alt:'Patáço title screen',
+    gallery:[{src:'pataco-2.webp',alt:'Patáço platforming gameplay in a cavern'},{src:'pataco-3.webp',alt:'Patáço character on a cavern platform'},{src:'pataco-4.webp',alt:'Another section of Patáço’s cavern level'}],
+    videos:[{type:'file',src:'assets/video/pataco.mp4',poster:'assets/video/pataco.webp',title:'Patáço gameplay presentation',caption:'The gameplay presentation prepared for Feevale’s Gamepad VII event.'}],
     description:'A university lab game and an early step in my programming journey, later presented at Feevale’s Gamepad VII event.',
     tags:['Unity','University','Gamepad VII'],role:'Programming',
     intro:'A Unity project from Feevale’s games lab, presented at Gamepad VII in 2014.',contributions:['Programming for the university project.'],
-    context:'The older resume dates the project to 2013. Its Behance page, published in June 2014, preserves images and the presentation context.',
-    links:[{label:'Original project & screenshots',url:'https://www.behance.net/gallery/17423669/Pataco-Unity3D-Game'}]
+    context:'A 2D platforming project from the university games lab, with cavern environments and a gameplay presentation at Gamepad VII. My contribution was programming.',
+    links:[]
   }
 ];

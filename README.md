@@ -33,3 +33,5 @@ Push to a GitHub repository with `main` as the default branch. Select GitHub Act
 ## Hosting cost
 
 Static GitHub Pages hosting is available for public repositories on GitHub Free. No paid services or dependencies are required. A custom domain is optional.
+
+The university/game-jam entries contain imported screenshots, project context, and locally hosted Patáço gameplay; visitors do not need the former portfolio archive. Racino’s development showcase follows the current racing gameplay and is labeled as non-final footage.
