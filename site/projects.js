@@ -4,6 +4,10 @@ const projects = [
     id: 'racino-racing', title: 'Racino Motorsport', category: 'professional', featured: true,
     kicker: 'RACINO / 2022 — PRESENT', label: 'FEATURED PROJECT', image: 'racino-racing.webp',
     alt: 'Open-wheel racing on Racino’s Australia circuit',
+    videos: [
+      {type:'file',src:'assets/video/racino-motorsport.mp4',poster:'assets/video/racino-motorsport.webp',title:'Open-wheel racing',caption:'A short gameplay excerpt from Racino Motorsport.'},
+      {type:'file',src:'assets/video/racino-race-intro.mp4',poster:'assets/video/racino-race-intro.webp',title:'Race introduction',caption:'The pre-race presentation, drivers, and starting grid.'}
+    ],
     description: 'Automated racing, built for the spectator. A Unity platform for realistic open-wheel racing and multiple vehicle types, including stock cars.',
     tags: ['Unity', 'Virtual sports', 'WebGL'], role: 'Senior Unity Developer',
     intro: 'At Racino, I lead Unity development for an automated racing platform. The work connects racing game systems with the presentation and delivery needed to turn a simulation into a spectator experience.',
@@ -25,6 +29,7 @@ const projects = [
   {
     id: 'racino-marbles', title: 'Racino Marbles', category: 'professional', kicker: 'RACINO / VIRTUAL SPORTS', label: 'RACING & REPLAY', image:'racino-marbles.webp',
     alt:'Two marbles racing through a stadium circuit filled with colorful obstacles',
+    videos:[{type:'file',src:'assets/video/racino-marbles.mp4',poster:'assets/video/racino-marbles.webp',title:'Marble racing gameplay',caption:'A head-to-head race through the stadium circuit.'}],
     description:'Marble racing with a broadcast point of view. Track-based competition, close-follow camera coverage, and recorded race replay workflows.',
     tags:['Unity', 'Marble racing', 'Replay'],role:'Unity Development · Racino',
     intro:'A different kind of race, with the same focus on making competition watchable. Racino Marbles brings marble racing into a Unity-based virtual sports setting.',
@@ -35,6 +40,7 @@ const projects = [
   {
     id:'racino-jousting',title:'Racino Jousting',category:'professional',kicker:'RACINO / PROTOTYPE',label:'IN DEVELOPMENT',image:'racino-jousting.webp',
     alt:'Armored mounted knights in the Racino Jousting tournament arena',
+    videos:[{type:'file',src:'assets/video/racino-jousting.mp4',poster:'assets/video/racino-jousting.webp',title:'Jousting in action',caption:'A short vertical gameplay showcase from the development prototype.',portrait:true}],
     description:'Two autonomous riders. One spectacle. A spectator-focused jousting prototype, bringing together match simulation, replay, and tournament presentation.',
     tags:['Unity','Autonomous AI','Broadcast'],role:'Unity Development · Racino',
     intro:'Racino Jousting explores virtual sports beyond the racetrack. Two autonomous riders compete while spectators follow the action through a directed broadcast.',
@@ -45,12 +51,13 @@ const projects = [
   {
     id:'tubelive',title:'Tubelive',category:'professional',kicker:'HAMMERFIST STUDIOS / PC',label:'SHIPPED PROJECT',image:'tubelive.webp',
     alt:'Tubelive streamer simulation interface showing a character broadcasting from their room',
+    videos:[{type:'embed',src:'https://www.youtube-nocookie.com/embed/ec4myWYLpts',title:'Tubelive gameplay',caption:'Gameplay footage showing the streamer-life simulation in action.',url:'https://www.youtube.com/watch?v=ec4myWYLpts'}],
     description:'The life of a virtual streamer, built from the ground up. A simulation project known under different names during its lifetime, including Little Streamer Story.',
     tags:['Unity','Simulation','Steam'],role:'Unity Developer · From the ground up',
-    intro:'Tubelive is a streamer-life simulation I developed from the ground up at Hammerfist Studios. The project changed names during its lifetime; my résumé also links its Little Streamer Story listing.',
+    intro:'Tubelive is a streamer-life simulation I developed from the ground up at Hammerfist Studios. The project changed names during its lifetime; my resume also links its Little Streamer Story listing.',
     contributions:['Developed core gameplay code.', 'Integrated art, audio, and UI into the game experience.', 'Managed desktop build pipelines and Steam SDK integration.'],
-    context:'The original trailer and contemporary coverage remain available even where store access has changed.',
-    links:[{label:'Watch the trailer',url:'https://www.youtube.com/watch?v=ec4myWYLpts'},{label:'Read contemporary coverage',url:'https://moegamer.net/2020/06/02/tubelive-living-the-streamer-dream/'},{label:'Game database entry',url:'https://www.igdb.com/games/tubelive/'}]
+    context:'Gameplay footage and contemporary coverage remain available even where store access has changed.',
+    links:[{label:'Watch gameplay',url:'https://www.youtube.com/watch?v=ec4myWYLpts'},{label:'Read contemporary coverage',url:'https://moegamer.net/2020/06/02/tubelive-living-the-streamer-dream/'},{label:'Game database entry',url:'https://www.igdb.com/games/tubelive/'}]
   },
   {
     id:'mullet-madjack',title:'Mullet MadJack',category:'professional',kicker:'HAMMERFIST STUDIOS / EARLY DEVELOPMENT',label:'EARLY PROTOTYPES',image:'mullet-madjack.webp',
@@ -63,13 +70,29 @@ const projects = [
     links:[{label:'Released game on Steam',url:'https://store.steampowered.com/app/2111190/MULLET_MADJACK/'}]
   },
   {
-    id:'learning-games',title:'Games for learning',category:'professional',kicker:'FEEVALE UNIVERSITY / 2013 — 2014',label:'EDUCATIONAL MOBILE GAMES',learning:true,
-    description:'Navegática and Corrida Gramatical: educational games from Feevale, part of my work supporting learning for children receiving cancer treatment.',
-    tags:['Unity','Mobile','Education'],role:'Unity Developer',
-    intro:'At Feevale University, I contributed to educational mobile games used to support children’s learning during their time in hospital.',
+    id:'navegatica',title:'Navegática',category:'professional',kicker:'FEEVALE UNIVERSITY / SCHOLARSHIP',label:'EDUCATIONAL GAME',image:'navegatica-1.webp',
+    alt:'Navegática educational boating game, from Feevale University',
+    gallery:[{src:'navegatica-2.webp',alt:'Navegática gameplay screenshot from the university archive'},{src:'navegatica-3.webp',alt:'Another scene from Navegática'}],
+    playUrl:'https://games.feevale.br/loa/navegatica/',
+    demoHint:'Choose “Visitante” (Guest) on the first screen to play without signing in.',
+    description:'Learning through a little adventure on the water. An educational game combining boat navigation, obstacle avoidance, and questions across school subjects.',
+    tags:['Unity','Education','WebGL demo'],role:'Unity Developer · Scholarship',
+    intro:'I contributed to Navegática through a financially supported scholarship at Feevale University. This was part of my professional development work in the university games lab, creating educational experiences for children.',
     contributions:['Programmed game systems.', 'Integrated art assets, audio, and UI.', 'Managed mobile build deployment.'],
-    context:'My résumé identifies Navegática and Corrida Gramatical as examples of this work. Their university pages provide the project context and web versions where available.',
-    links:[{label:'Navegática · University page',url:'https://loa.feevale.br/jogos/navegatica/'},{label:'Corrida Gramatical · University page',url:'https://loa.feevale.br/jogos/corridagramatical/'}]
+    context:'Players steer a boat through obstacles and toward an answer to a school-subject question, collecting stars along the way. The university’s current WebGL edition covers subjects such as science, mathematics, logic, and history. My Feevale scholarship work dates to 2013–2014; the university continues to preserve and host the game.',
+    links:[{label:'Play the WebGL demo',url:'https://games.feevale.br/loa/navegatica/'},{label:'University project page',url:'https://loa.feevale.br/jogos/navegatica/'}]
+  },
+  {
+    id:'corrida-gramatical',title:'Corrida Gramatical',category:'professional',kicker:'FEEVALE UNIVERSITY / SCHOLARSHIP',label:'EDUCATIONAL GAME',image:'corrida-gramatical-1.webp',
+    alt:'Corrida Gramatical educational game, from Feevale University',
+    gallery:[{src:'corrida-gramatical-2.webp',alt:'Corrida Gramatical gameplay screenshot from the university archive'},{src:'corrida-gramatical-3.webp',alt:'Another scene from Corrida Gramatical'}],
+    playUrl:'https://games.feevale.br/loa/corridagramatical/',
+    description:'A playful way to practice Portuguese. Dodge obstacles, collect stars, and answer questions in an educational game designed for children and teenagers.',
+    tags:['Unity','Children’s games','WebGL demo'],role:'Unity Developer · Scholarship',
+    intro:'I contributed to Corrida Gramatical through my financially supported scholarship at Feevale University. The project supported Portuguese-language learning for children and teenagers receiving cancer treatment at AMO.',
+    contributions:['Programmed game systems.', 'Integrated art assets, audio, and UI.', 'Managed mobile build deployment.'],
+    context:'The game combines obstacle avoidance and star collection with multiple-choice Portuguese questions. It was developed by Feevale’s Digital Games Laboratory with the Learning with Mobility research project and CNPq support. The university hosts a playable WebGL version today.',
+    links:[{label:'Play the WebGL demo',url:'https://games.feevale.br/loa/corridagramatical/'},{label:'University project page',url:'https://loa.feevale.br/jogos/corridagramatical/'}]
   },
   {
     id:'mime-time',title:'Mime Time',category:'early',kicker:'LUDUM DARE 28 / 2013',label:'72-HOUR GAME JAM',image:'mime-time.webp',alt:'Mime Time game screenshot from the original Behance project',
@@ -97,10 +120,11 @@ const projects = [
   },
   {
     id:'pataco',title:'Patáço',category:'early',kicker:'FEEVALE GAMES LAB / 2013',label:'UNIVERSITY PROJECT',image:'pataco.webp',alt:'Patáço game screenshot preserved on Behance',
+    videos:[{type:'embed',src:'https://www-ccv.adobe.io/v1/player/ccv/R-89eRN3rUr/embed?api_key=behance1&bgcolor=%23191919',title:'Patáço gameplay presentation',caption:'The original presentation video preserved on Behance.',url:'https://www.behance.net/gallery/17423669/Pataco-Unity3D-Game'}],
     description:'A university lab game and an early step in my programming journey, later presented at Feevale’s Gamepad VII event.',
     tags:['Unity','University','Gamepad VII'],role:'Programming',
     intro:'A Unity project from Feevale’s games lab, presented at Gamepad VII in 2014.',contributions:['Programming for the university project.'],
-    context:'The older résumé dates the project to 2013. Its Behance page, published in June 2014, preserves images and the presentation context.',
+    context:'The older resume dates the project to 2013. Its Behance page, published in June 2014, preserves images and the presentation context.',
     links:[{label:'Original project & screenshots',url:'https://www.behance.net/gallery/17423669/Pataco-Unity3D-Game'}]
   }
 ];
