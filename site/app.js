@@ -7,9 +7,13 @@ function media(project, detail = false) {
   if (project.image) return `<img ${detail ? 'class="detail-image"' : ''} src="assets/${project.image}" alt="${escapeHTML(project.alt)}" loading="lazy" width="1280" height="720">`;
   return `<div class="dsw-title">${project.learning ? 'Little games.<br>Real purpose.' : 'deep space<br>waifu'}<small>${project.learning ? 'NAVEGÁTICA · CORRIDA GRAMATICAL' : 'THE ORIGINAL + FIVE FOLLOW-UP TITLES'}</small></div>${project.mature?'<span class="review-badge"><strong>98%</strong> positive<br><small>NEKOMIMI · HISTORICAL SCORE</small></span>':''}`;
 }
+function videoFigure(video) {
+  return `<figure class="gameplay-video"><div class="video-frame ${video.portrait?'portrait':''}">${video.type==='file'?`<video controls playsinline preload="metadata" poster="${video.poster}" aria-label="${escapeHTML(video.title)}"><source src="${video.src}" type="video/mp4">Your browser does not support this player. <a href="${video.src}">Open the gameplay video</a>.</video>`:`<iframe src="${video.src}" title="${escapeHTML(video.title)}" loading="lazy" allow="autoplay; encrypted-media; picture-in-picture; fullscreen" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>`}</div><figcaption><strong>${video.title}</strong><span>${video.caption}</span>${video.url?`<a href="${video.url}" target="_blank" rel="noopener noreferrer">Watch on YouTube ↗</a>`:''}</figcaption></figure>`;
+}
 function videoContent(project) {
   if (!project.videos?.length) return '';
-  return `<section class="project-videos" aria-label="${escapeHTML(project.title)} videos"><h3>See the game in action</h3>${project.videos.map((video,index)=>`<figure class="gameplay-video"><div class="video-frame ${video.portrait?'portrait':''}">${video.type==='file'?`<video controls playsinline preload="metadata" poster="${video.poster}" aria-label="${escapeHTML(video.title)}"><source src="${video.src}" type="video/mp4">Your browser does not support this player. <a href="${video.src}">Open the gameplay video</a>.</video>`:`<iframe src="${video.src}" title="${escapeHTML(video.title)}" loading="lazy" allow="autoplay; encrypted-media; picture-in-picture; fullscreen" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>`}</div><figcaption><strong>${video.title}</strong><span>${video.caption}</span>${video.url?`<a href="${video.url}" target="_blank" rel="noopener noreferrer">Watch on YouTube ↗</a>`:''}</figcaption></figure>`).join('')}</section>`;
+  if (!project.videoPlaylist) return `<section class="project-videos" aria-label="${escapeHTML(project.title)} videos"><h3>See the game in action</h3>${project.videos.map(videoFigure).join('')}</section>`;
+  return `<section class="project-videos video-playlist" aria-label="${escapeHTML(project.title)} videos"><h3>See the game in action</h3><div class="selected-video">${videoFigure(project.videos[0])}</div><h3>${project.playlistLabel||'More videos'}</h3><div class="video-choices" role="group" aria-label="Choose a ${escapeHTML(project.title)} video">${project.videos.map((video,index)=>`<button type="button" class="video-choice ${index===0?'active':''}" data-video-project="${project.id}" data-video-index="${index}" aria-pressed="${index===0}" aria-label="Select ${escapeHTML(video.title)} video"><img src="${video.poster}" alt="" loading="lazy" width="320" height="180"><span>${video.title}</span></button>`).join('')}</div><p class="sr-only video-selection-status" aria-live="polite"></p></section>`;
 }
 function galleryContent(project) {
   if (!project.gallery?.length) return '';
@@ -43,6 +47,18 @@ document.querySelector('.filters').addEventListener('click',event=>{
 });
 grid.addEventListener('click',event=>{const trigger=event.target.closest('[data-project]');if(trigger)openProject(trigger.dataset.project,trigger);});
 document.querySelector('.dialog-close').addEventListener('click',()=>dialog.close());
+content.addEventListener('click',event=>{
+  const button=event.target.closest('[data-video-project]');
+  if(!button)return;
+  const project=projects.find(item=>item.id===button.dataset.videoProject);
+  const video=project?.videos[Number(button.dataset.videoIndex)];
+  if(!video||button.getAttribute('aria-pressed')==='true')return;
+  const playlist=button.closest('.video-playlist');
+  playlist.querySelectorAll('video').forEach(player=>player.pause());
+  playlist.querySelector('.selected-video').innerHTML=videoFigure(video);
+  playlist.querySelectorAll('.video-choice').forEach(item=>{item.classList.toggle('active',item===button);item.setAttribute('aria-pressed',String(item===button));});
+  playlist.querySelector('.video-selection-status').textContent=`Selected ${video.title}. Use the player above to watch.`;
+});
 content.addEventListener('play',event=>{
   content.querySelectorAll('video').forEach(video=>{if(video!==event.target)video.pause();});
 },true);

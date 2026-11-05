@@ -29,9 +29,17 @@ const projects = [
   },
   {
     id: 'racino-marbles', title: 'Racino Marbles', category: 'professional', kicker: 'RACINO / VIRTUAL SPORTS', label: 'RACING & REPLAY', image:'racino-marbles.webp',
-    alt:'Two marbles racing through a stadium circuit filled with colorful obstacles',
-    videos:[{type:'file',src:'assets/video/racino-marbles.mp4',poster:'assets/video/racino-marbles.webp',title:'Marble racing gameplay',caption:'A head-to-head race through the stadium circuit.'}],
-    description:'Marble racing with a broadcast point of view. Track-based competition, close-follow camera coverage, and recorded race replay workflows.',
+    alt:'Racino Marbles racing through Electron Expressway’s neon-lit circuit',
+    videoPlaylist:true, playlistLabel:'Explore the tracks',
+    videos:[
+      {type:'file',src:'assets/video/marbles-electron-expressway.mp4',poster:'assets/video/marbles-electron-expressway.webp',title:'Electron Expressway',caption:'Racing and broadcast camera coverage on the neon-lit Electron Expressway circuit.'},
+      {type:'file',src:'assets/video/marbles-sakura-garden.mp4',poster:'assets/video/marbles-sakura-garden.webp',title:'Sakura Garden',caption:'A track showcase set against Sakura Garden’s pink blossoms.'},
+      {type:'file',src:'assets/video/marbles-savage-speedway.mp4',poster:'assets/video/marbles-savage-speedway.webp',title:'Savage Speedway',caption:'A race showcase on the Savage Speedway circuit.'},
+      {type:'file',src:'assets/video/marbles-gearhead-grid.mp4',poster:'assets/video/marbles-gearhead-grid.webp',title:'Gearhead Grid',caption:'Racing through Gearhead Grid’s urban waterfront setting.'},
+      {type:'file',src:'assets/video/marbles-atlas-arena.mp4',poster:'assets/video/marbles-atlas-arena.webp',title:'Atlas Arena',caption:'A race showcase through Atlas Arena’s grand architectural setting.'},
+      {type:'file',src:'assets/video/marbles-arctic-circuit.mp4',poster:'assets/video/marbles-arctic-circuit.webp',title:'Arctic Circuit',caption:'A showcase of racing and camera coverage on Arctic Circuit.'}
+    ],
+    description:'Marble racing across distinctive themed tracks. Explore Electron Expressway, Sakura Garden, and more through race footage and broadcast camera coverage.',
     tags:['Unity', 'Marble racing', 'Replay'],role:'Unity Development · Racino',
     intro:'A different kind of race, with the same focus on making competition watchable. Racino Marbles brings marble racing into a Unity-based virtual sports setting.',
     contributions:[],
@@ -40,8 +48,13 @@ const projects = [
   },
   {
     id:'racino-jousting',title:'Racino Jousting',category:'professional',kicker:'RACINO / PROTOTYPE',label:'IN DEVELOPMENT',image:'racino-jousting.webp',
-    alt:'Armored mounted knights in the Racino Jousting tournament arena',
-    videos:[{type:'file',src:'assets/video/racino-jousting.mp4',poster:'assets/video/racino-jousting.webp',title:'Jousting in action',caption:'A short vertical gameplay showcase from the development prototype.',portrait:true}],
+    alt:'Mounted riders charging toward each other in the Racino Jousting tournament arena',
+    videoPlaylist:true, playlistLabel:'Choose a recording',
+    videos:[
+      {type:'file',src:'assets/video/jousting-full-match.mp4',poster:'assets/video/jousting-full-match.webp',title:'Full match',caption:'The complete match presentation: rider introductions, the joust, replay, and the result.'},
+      {type:'file',src:'assets/video/jousting-cinematic-match.mp4',poster:'assets/video/jousting-cinematic-match.webp',title:'Cinematic match',caption:'A longer match recording without overlays, focused on the riders and arena.'},
+      {type:'file',src:'assets/video/racino-jousting.mp4',poster:'assets/video/racino-jousting.webp',title:'Vertical highlights',caption:'A short vertical showcase from the development prototype.',portrait:true}
+    ],
     description:'Two autonomous riders. One spectacle. A spectator-focused jousting prototype, bringing together match simulation, replay, and tournament presentation.',
     tags:['Unity','Autonomous AI','Broadcast'],role:'Unity Development · Racino',
     intro:'Racino Jousting explores virtual sports beyond the racetrack. Two autonomous riders compete while spectators follow the action through a directed broadcast.',
