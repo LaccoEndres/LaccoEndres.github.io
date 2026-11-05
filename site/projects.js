@@ -10,9 +10,9 @@ const projects = [
       {type:'file',src:'assets/video/racino-race-intro.mp4',poster:'assets/video/racino-race-intro.webp',title:'Race introduction',caption:'The pre-race presentation, drivers, and starting grid.'}
     ],
     description: 'Automated racing, built for the spectator. A Unity platform for realistic open-wheel racing and multiple vehicle types, including stock cars.',
-    tags: ['Unity', 'Virtual sports', 'WebGL'], role: 'Senior Unity Developer',
+    tags: ['Unity', 'Virtual sports', 'WebGL', 'AWS'], role: 'Senior Unity Developer',
     intro: 'At Racino, I lead Unity development for an automated racing platform. The work connects racing game systems with the presentation and delivery needed to turn a simulation into a spectator experience.',
-    contributions: ['Implemented game systems and integrated art, audio, and UI.', 'Managed Addressables and WebGL build deployment.', 'Worked across an expandable racing platform supporting different vehicle types.'],
+    contributions: ['Implemented game systems and integrated art, audio, and UI.', 'Managed Addressables and WebGL build deployment.', 'Configured, deployed, and supported the AWS virtual machine used for backend recording.', 'Worked across an expandable racing platform supporting different vehicle types.'],
     context: 'The racing platform spans open-wheel and stock-car scenes, with broadcast camera direction, liveries, and lighting configurations that support different racing presentations.',
     links: [{label:'Racino website',url:'https://racino.io/'},{label:'F1 showcase video',url:'https://drive.google.com/file/d/1mZH94Br1vqYNgdVMZ5HcVTagrcjXKvCD/view'},{label:'More racing footage',url:'https://drive.google.com/drive/folders/1AdZjJ5QR7XYTs06UEKF-n9TK8Ft4FR1S'}]
   },
