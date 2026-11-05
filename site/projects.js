@@ -6,7 +6,7 @@ const projects = [
     alt: 'Open-wheel racing on Racino’s Australia circuit',
     videos: [
       {type:'file',src:'assets/video/racino-motorsport.mp4',poster:'assets/video/racino-motorsport.webp',title:'Open-wheel racing',caption:'A short gameplay excerpt from Racino Motorsport.'},
-      {type:'file',src:'assets/video/racino-showcase.mp4',poster:'assets/video/racino-showcase.webp',title:'Racino — development showcase',caption:'A broad look at the work across Racino. Earlier development footage; the scenes and features shown are not final versions.'},
+      {type:'file',src:'assets/video/racino-showcase.mp4',poster:'assets/video/racino-showcase.webp',title:'Racino — development showcase',caption:'A broad look at the work across Racino. This is earlier development footage. The scenes and features shown are not final versions.'},
       {type:'file',src:'assets/video/racino-race-intro.mp4',poster:'assets/video/racino-race-intro.webp',title:'Race introduction',caption:'The pre-race presentation, drivers, and starting grid.'}
     ],
     description: 'Automated racing, built for the spectator. A Unity platform for realistic open-wheel racing and multiple vehicle types, including stock cars.',
@@ -17,15 +17,18 @@ const projects = [
     links: [{label:'Racino website',url:'https://racino.io/'},{label:'F1 showcase video',url:'https://drive.google.com/file/d/1mZH94Br1vqYNgdVMZ5HcVTagrcjXKvCD/view'},{label:'More racing footage',url:'https://drive.google.com/drive/folders/1AdZjJ5QR7XYTs06UEKF-n9TK8Ft4FR1S'}]
   },
   {
-    id: 'deep-space-waifu', title: 'Deep Space Waifu', category: 'professional', kicker: 'HAMMERFIST STUDIOS / PC', label: 'SHIPPED SERIES', mature: true,
+    id: 'deep-space-waifu', title: 'Deep Space Waifu', category: 'professional', kicker: 'HAMMERFIST STUDIOS / PC', label: 'SHIPPED SERIES', mature: true, image: 'deep-space-waifu-title.webp',
+    alt: 'Deep Space Waifu title screen with Bear riding a pink hoverbike at sunset',
+    galleryTitle: 'Series artwork', galleryNote: 'Promotional artwork from Flat Justice.',
+    gallery: [{src:'deep-space-waifu-flat-justice-art.webp',alt:'Flat Justice artwork with Bear on a blue police hoverbike against a neon city skyline'}],
     description: 'Arcade shoot ’em up development across the original game and five follow-up titles. Core gameplay, integration, and Steam release pipelines.',
     tags: ['Unity', 'Arcade shooter', 'Steam', '18+ title'], role: 'Unity Developer · From the ground up',
     intro: 'I developed Deep Space Waifu and its five follow-up titles from the ground up during my time at Hammerfist Studios. The series combines accessible arcade shooting with an adult audience and a distinctive visual identity.',
     contributions: ['Developed core gameplay code across the original and follow-up projects.', 'Integrated art assets, audio, and user interfaces.', 'Orchestrated desktop build pipelines and Steam SDK integration.'],
-    context: 'A shipped series spanning the original release, Flat Justice, Fantasy, Nekomimi, World, and Legends. Several store listings have since been retired; the archive links preserve the project’s history.',
+    context: 'A shipped series spanning the original release, Flat Justice, Fantasy, Nekomimi, World, and Legends. The games are no longer listed on Steam.',
     review: true,
-    expansions: [{name:'Flat Justice',url:'https://steamdb.info/app/639780/'},{name:'Fantasy',url:'https://store.steampowered.com/app/859680/'},{name:'Nekomimi',url:'https://store.steampowered.com/app/868980/'},{name:'World',url:'https://store.steampowered.com/app/872130/'},{name:'Legends',url:'https://store.steampowered.com/app/1170620/'}],
-    links: [{label:'Original game archive · 18+',url:'https://steamdb.info/app/639790/'},{label:'Series coverage · 18+',url:'https://moegamer.net/all-games/deep-space-waifu/'}]
+    expansions: [{name:'Flat Justice'},{name:'Fantasy'},{name:'Nekomimi'},{name:'World'},{name:'Legends'}],
+    links: [{label:'Series release history · PCGamingWiki',url:'https://www.pcgamingwiki.com/wiki/Series:Deep_Space_Waifu'}]
   },
   {
     id: 'racino-marbles', title: 'Racino Marbles', category: 'professional', kicker: 'RACINO / VIRTUAL SPORTS', label: 'RACING & REPLAY', image:'racino-marbles.webp',
@@ -68,7 +71,7 @@ const projects = [
     videos:[{type:'embed',src:'https://www.youtube-nocookie.com/embed/ec4myWYLpts',title:'Tubelive gameplay',caption:'Gameplay footage showing the streamer-life simulation in action.',url:'https://www.youtube.com/watch?v=ec4myWYLpts'}],
     description:'The life of a virtual streamer, built from the ground up. A simulation project known under different names during its lifetime, including Little Streamer Story.',
     tags:['Unity','Simulation','Steam'],role:'Unity Developer · From the ground up',
-    intro:'Tubelive is a streamer-life simulation I developed from the ground up at Hammerfist Studios. The project changed names during its lifetime; my resume also links its Little Streamer Story listing.',
+    intro:'Tubelive is a streamer-life simulation I developed from the ground up at Hammerfist Studios. The project changed names a few times. My resume also links its Little Streamer Story listing.',
     contributions:['Developed core gameplay code.', 'Integrated art, audio, and UI into the game experience.', 'Managed desktop build pipelines and Steam SDK integration.'],
     context:'Gameplay footage and contemporary coverage remain available even where store access has changed.',
     links:[{label:'Watch gameplay',url:'https://www.youtube.com/watch?v=ec4myWYLpts'},{label:'Read contemporary coverage',url:'https://moegamer.net/2020/06/02/tubelive-living-the-streamer-dream/'},{label:'Game database entry',url:'https://www.igdb.com/games/tubelive/'}]
@@ -80,7 +83,7 @@ const projects = [
     tags:['Unity','Prototyping','FPS'],role:'Early prototype contribution',
     intro:'During my time at Hammerfist Studios, I contributed to part of the early prototyping for Mullet MadJack.',
     contributions:[],
-    context:'My contribution was during early prototyping. The linked commercial game was later released by HAMMER95 in 2024; the cover artwork shows that eventual release.',
+    context:'My contribution was during early prototyping. The linked commercial game was later released by HAMMER95 in 2024. The cover artwork is from that release.',
     links:[{label:'Released game on Steam',url:'https://store.steampowered.com/app/2111190/MULLET_MADJACK/'}]
   },
   {
@@ -93,7 +96,7 @@ const projects = [
     tags:['Unity','Education','WebGL demo'],role:'Unity Developer · Scholarship',
     intro:'I contributed to Navegática through a financially supported scholarship at Feevale University. This was part of my professional development work in the university games lab, creating educational experiences for children.',
     contributions:['Programmed game systems.', 'Integrated art assets, audio, and UI.', 'Managed mobile build deployment.'],
-    context:'Players steer a boat through obstacles and toward an answer to a school-subject question, collecting stars along the way. The university’s current WebGL edition covers subjects such as science, mathematics, logic, and history. My Feevale scholarship work dates to 2013–2014; the university continues to preserve and host the game.',
+    context:'Players steer a boat through obstacles and toward an answer to a school-subject question, collecting stars along the way. The university’s current WebGL edition covers subjects such as science, mathematics, logic, and history. I worked on it through a Feevale scholarship in 2013–2014. The university still preserves and hosts the game.',
     links:[{label:'Play the WebGL demo',url:'https://games.feevale.br/loa/navegatica/'},{label:'University project page',url:'https://loa.feevale.br/jogos/navegatica/'}]
   },
   {

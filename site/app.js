@@ -3,8 +3,11 @@ const dialog = document.querySelector('#project-dialog');
 const content = document.querySelector('#dialog-content');
 let activeTrigger = null;
 function escapeHTML(value) { return String(value).replace(/[&<>"']/g, char => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[char])); }
+function imageButton(src, alt, detail = false) {
+  return `<button type="button" class="image-open ${detail ? 'detail-image-button' : ''}" aria-label="Enlarge image: ${escapeHTML(alt)}"><img ${detail ? 'class="detail-image"' : ''} src="${escapeHTML(src)}" alt="${escapeHTML(alt)}" loading="lazy" width="1280" height="720"></button>`;
+}
 function media(project, detail = false) {
-  if (project.image) return `<img ${detail ? 'class="detail-image"' : ''} src="assets/${project.image}" alt="${escapeHTML(project.alt)}" loading="lazy" width="1280" height="720">`;
+  if (project.image) return imageButton(`assets/${project.image}`, project.alt, detail);
   return `<div class="dsw-title">${project.learning ? 'Little games.<br>Real purpose.' : 'deep space<br>waifu'}<small>${project.learning ? 'NAVEGÁTICA · CORRIDA GRAMATICAL' : 'THE ORIGINAL + FIVE FOLLOW-UP TITLES'}</small></div>${project.mature?'<span class="review-badge"><strong>98%</strong> positive<br><small>NEKOMIMI · HISTORICAL SCORE</small></span>':''}`;
 }
 function videoFigure(video) {
@@ -17,7 +20,7 @@ function videoContent(project) {
 }
 function galleryContent(project) {
   if (!project.gallery?.length) return '';
-  return `<section class="project-gallery" aria-label="${escapeHTML(project.title)} screenshots"><h3>A closer look</h3><div>${project.gallery.map(image=>`<img src="assets/${image.src}" alt="${escapeHTML(image.alt)}" loading="lazy" width="1280" height="720">`).join('')}</div></section>`;
+  return `<section class="project-gallery" aria-label="${escapeHTML(project.title)} images"><h3>${escapeHTML(project.galleryTitle || 'A closer look')}</h3>${project.galleryNote ? `<p>${escapeHTML(project.galleryNote)}</p>` : ''}<div>${project.gallery.map(image => imageButton(`assets/${image.src}`, image.alt)).join('')}</div></section>`;
 }
 function renderProjects(filter='all') {
   const shown = projects.filter(project => filter === 'all' || project.category === filter);
@@ -28,8 +31,8 @@ function openProject(id, trigger) {
   const project = projects.find(project=>project.id===id);
   if(!project) return;
   activeTrigger = trigger;
-  const reviews = `<h3>Player reception</h3><p class="review-note"><strong>98% positive — a historical Nekomimi milestone.</strong><br><a href="https://www.steamspy.com/app/868980" target="_blank" rel="noopener noreferrer">SteamSpy records a 98% user score</a>, and <a href="https://weatherfactory.biz/the-law-of-boob/" target="_blank" rel="noopener noreferrer">an article by game developer Lottie Bevan using 2019 review scores</a> independently mentions the same figure. Archived reports also show <a href="https://isthereanydeal.com/product/018d9386-4b30-734b-a683-8195c52d5d53/" target="_blank" rel="noopener noreferrer">95% positive for the original</a> and <a href="https://steambase.io/games/deep-space-waifu-flat-justice/reviews" target="_blank" rel="noopener noreferrer">93% for Flat Justice</a>.<br><small>Sources checked November 4, 2026. Scores vary by date, review pool, and provider. The 98% figure is historical, not a live rating for every title.</small></p>`;
-  content.innerHTML = `<p class="project-kicker">${project.kicker}</p><h2 id="dialog-title">${project.title}</h2>${project.videos?.length?videoContent(project):project.image?media(project,true):''}${project.playUrl?`<a class="button button-blue demo-button" href="${project.playUrl}" target="_blank" rel="noopener noreferrer">Play the WebGL demo <span aria-hidden="true">↗</span></a>`:''}<p>${project.intro}</p>${project.contributions.length?`<h3>My contribution</h3><ul>${project.contributions.map(line=>`<li>${line}</li>`).join('')}</ul>`:''}<h3>Project context</h3><p>${project.context}</p>${galleryContent(project)}${project.review?reviews:''}${project.expansions?`<h3>The five follow-up titles</h3><ul class="expansion-list">${project.expansions.map(item=>`<li><a href="${item.url}" target="_blank" rel="noopener noreferrer">${item.name} ↗</a></li>`).join('')}</ul><p><small>External game pages may contain adult material or require a Steam login.</small></p>`:''}<div class="detail-links">${project.links.map(link=>`<a href="${link.url}" target="_blank" rel="noopener noreferrer">${link.label} ↗</a>`).join('')}</div>`;
+  const reviews = `<h3>Player reception</h3><p class="review-note"><strong>98% positive — a historical Nekomimi milestone.</strong><br>Archived reports recorded 98% positive for Nekomimi, 95% for the original game, and 93% for Flat Justice.<br><small>Historical figures from SteamSpy, published coverage, IsThereAnyDeal, and Steambase, checked in November 2026. Ratings vary by date and source. The 98% figure applies to Nekomimi at the time reported.</small></p>`;
+  content.innerHTML = `<p class="project-kicker">${project.kicker}</p><h2 id="dialog-title">${project.title}</h2>${project.videos?.length?videoContent(project):project.image?media(project,true):''}${project.playUrl?`<a class="button button-blue demo-button" href="${project.playUrl}" target="_blank" rel="noopener noreferrer">Play the WebGL demo <span aria-hidden="true">↗</span></a>`:''}<p>${project.intro}</p>${project.contributions.length?`<h3>My contribution</h3><ul>${project.contributions.map(line=>`<li>${line}</li>`).join('')}</ul>`:''}<h3>Project context</h3><p>${project.context}</p>${galleryContent(project)}${project.review?reviews:''}${project.expansions?`<h3>The five follow-up titles</h3><ul class="expansion-list">${project.expansions.map(item=>`<li>${escapeHTML(item.name)}</li>`).join('')}</ul>`:''}<div class="detail-links">${project.links.map(link=>`<a href="${link.url}" target="_blank" rel="noopener noreferrer">${link.label} ↗</a>`).join('')}</div>`;
   dialog.showModal();
   if (project.demoHint) {
     const hint=document.createElement('p');
@@ -70,3 +73,27 @@ dialog.addEventListener('close',()=>{
 });
 document.querySelector('#year').textContent=new Date().getFullYear();
 renderProjects();
+
+const imageViewer = document.querySelector('#image-viewer');
+const viewerImage = imageViewer.querySelector('img');
+let imageTrigger = null;
+document.addEventListener('click', event => {
+  const button = event.target.closest('.image-open');
+  if (!button) return;
+  const image = button.querySelector('img');
+  imageTrigger = button;
+  viewerImage.src = image.currentSrc || image.src;
+  viewerImage.alt = image.alt;
+  document.querySelector('#image-viewer-caption').textContent = image.alt;
+  imageViewer.showModal();
+  imageViewer.querySelector('.image-viewer-close').focus();
+});
+imageViewer.addEventListener('click', event => {
+  if (event.target === imageViewer || event.target.closest('.image-viewer-close, .image-viewer-dismiss')) imageViewer.close();
+});
+imageViewer.addEventListener('close', () => {
+  viewerImage.removeAttribute('src');
+  viewerImage.alt = '';
+  document.querySelector('#image-viewer-caption').textContent = '';
+  imageTrigger?.focus({preventScroll: true});
+});
